@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уведомления и JSON</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Получить текстовое уведомление и добавить в JSON</h1>
+        <form id="notification-form">
+            <label for="notification-text">Текст уведомления:</label>
+            <input type="text" id="notification-text" required>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    <div class="container">
+        <h2>JSON База данных:</h2>
+        <pre id="json-data"></pre>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
