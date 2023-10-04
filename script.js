@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const notificationForm = document.getElementById("notification-form");
     const jsonData = document.getElementById("json-data");
-    const notifications = [];
+    const clearButton = document.getElementById("clear-button"); // Выбираем кнопку очистки
+    
+   
+const notifications = [];
 
     // Загрузка данных из локального хранилища, если они есть
     if (localStorage.getItem("notifications")) {
@@ -16,12 +19,28 @@ document.addEventListener("DOMContentLoaded", function () {
         if (notificationText) {
             notifications.push(notificationText);
             localStorage.setItem("notifications", JSON.stringify(notifications));
-            updateJsonData();
+            
+            updateJsonData
+updateJsonData();
             notificationForm.reset();
         }
     });
 
+    clearButton.
+        }
+    });
+
+    clear
+addEventListener("click", function () {
+        // Очистка ответов и удаление из локального хранилища
+        notifications.length = 0;
+        localStorage.removeItem("notifications");
+        updateJsonData();
+    });
+
     function updateJsonData() {
-        jsonData.textContent = JSON.stringify(notifications, null, 2);
+        jsonData.
+       
+textContent = JSON.stringify(notifications, null, 2);
     }
 });
