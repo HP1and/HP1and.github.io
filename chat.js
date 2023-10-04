@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const notificationForm = document.getElementById("notification-form");
-    const jsonData = document.getElementById("json-data");
+    const jsonList = document.getElementById("json-list"); // Изменен идентификатор для списка
     const clearButton = document.getElementById("clear-button");
-    const userNameInput = document.getElementById("user-name"); // Добавим поле для имени пользователя
+    const userNameInput = document.getElementById("user-name");
     const notifications = [];
 
     // Загрузка данных из локального хранилища, если они есть
@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     notificationForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        const userName = userNameInput.value; // Получаем имя пользователя
+        const userName = userNameInput.value;
         const notificationText = document.getElementById("notification-text").value;
         
         if (userName && notificationText) {
             const notification = {
-                userName: userName, // Добавляем имя пользователя
+                userName: userName,
                 text: notificationText
             };
             notifications.push(notification);
@@ -36,6 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function updateJsonData() {
-        jsonData.textContent = JSON.stringify(notifications, null, 2);
+        // Очищаем список перед обновлением
+        jsonList.innerHTML = "";
+
+        // Добавляем уведомления в список
+        notifications.forEach(function (notification) {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${notification.userName}: ${notification.text}`;
+            jsonList.appendChild(listItem);
+        });
     }
 });
