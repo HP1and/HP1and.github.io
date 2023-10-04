@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (authenticated && username) {
         // Если пользователь уже аутентифицирован, перенаправить на страницу после входа
-        window.location.href = "dashboard.html";
+        window.location.href = "chat.html";
     }
 
     loginForm.addEventListener("submit", function (e) {
