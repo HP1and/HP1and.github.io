@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (username === loginUsername && password === loginPassword) {
             // Успешная аутентификация
             localStorage.setItem("authenticated", "true");
-            window.location.href = "dashboard.html"; // Перенаправление на страницу после входа
+            window.location.href = "chat.html"; // Перенаправление на страницу после входа
         } else {
             // Неуспешная аутентификация
             loginErrorMessage.textContent = "Неправильное имя пользователя или пароль.";
